@@ -1,6 +1,22 @@
 // TBL_USER TESTING INCLUDES CREATE, UPDATE, RETRIEVE, AND DEACTIVATE 
 import db from "../config/database.js";
 
+//check if user exists | TESTING  pass,
+export const checkUser = (email, result)=>{
+   // db.query("SELECT * FROM tbl_user WHERE user_email = ? && user_password = ?", 
+    db.query("SELECT * FROM tbl_user WHERE user_email = ? && user_password = ?", 
+        [email, pass], 
+        (err, results) =>{
+        if(err){
+            console.log("ERROR: " + err);
+            result(err, null)
+        }
+        else{
+            result(null,results)
+        }
+    } )
+}
+
 //get all users
 export const getUsers = (result)=>{
     db.query ("SELECT * FROM tbl_user", (err,results)=>{
@@ -70,7 +86,7 @@ export const updateUserbyUserID = (data, id, result) => {
 
 //deactivate user 
 export const deactivateUserbyUser_ID = (data, id, result) => {
-    db.query ("UPDAET tbl_user SET active = ? WHERE user_id = ?",
+    db.query ("UPDATE tbl_user SET active = ? WHERE user_id = ?",
         [data.active, data.user_id],
         (err,results) => {
             if(err){

@@ -11,11 +11,11 @@
                 </div>
                 <div class="field grid grid-cols-1 mt-2">
                     <label for="email">Email </label>
-                    <input type="text" id="lname" placeholder="Email Address" class="border rounded-lg py-2 px-5":class="{ 'border-red-500': emailError }">
+                    <input type="text" id="email" placeholder="Email Address" class="border rounded-lg py-2 px-5":class="{ 'border-red-500': emailError }">
                 </div>
                 <div class="field grid grid-cols-1 mt-2">
                     <label for="password">Password </label>
-                    <input type="text" id="lname" placeholder="Password" class="border rounded-lg py-2 px-5" :class="{ 'border-red-500': passwordError }">
+                    <input type="Password" id="password" placeholder="Password" class="border rounded-lg py-2 px-5" :class="{ 'border-red-500': passwordError }">
                 </div>
                 <div class="flex justify-between mt-3">
                     <div class="flex space-x-2">
@@ -31,7 +31,7 @@
                 </div>
                 <div class="flex mt-3 justify-center space-x-2">
                     <span>Don't you have an account? </span>
-                    <a href="" class="text-blue-500"><u>Sign up</u></a>
+                    <a href="" class="text-blue-500"><u>Sign dsda</u></a>
                 </div>
             </div>
         </form>
