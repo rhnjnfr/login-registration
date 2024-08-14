@@ -4,6 +4,7 @@ import Router from "./routes/routes.js";
 import { checkUser } from "./models/userModel.js";
 
 const app = express (); 
+//const app2 = http.create
 
 app.use(express.json());
 app.use(cors());
