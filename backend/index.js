@@ -3,9 +3,13 @@ import cors from "cors";
 import Router from "./routes/routes.js";
 import { checkUser } from "./models/userModel.js";
 
-const http = require('http');
+//new for render 
+import http from 'http';  // Use import instead of require
+import os from 'os';
+
+// const http = require('http');
 const app = express (); //old
-const { hostname } = require('os'); 
+//const { hostname } = require('os'); 
 
 const port = process.env.PORT || 5000; 
 const server = http.createServer(app);
@@ -15,6 +19,8 @@ app.use(express.json());
 app.use(cors());
 app.use(Router);
 
+//for render 
+const hostname = os.hostname();
 
 app.get('/api/check-user', (req, res) => {
     const email = req.query.email;
