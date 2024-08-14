@@ -2,10 +2,10 @@
 import db from "../config/database.js";
 
 //check if user exists | TESTING  pass,
-export const checkUser = (email, result)=>{
+export const checkUser = (email, pass, result)=>{
    // db.query("SELECT * FROM tbl_user WHERE user_email = ? && user_password = ?", 
     db.query("SELECT * FROM tbl_user WHERE user_email = ? && user_password = ?", 
-        [email, pass], 
+        [email, pass], //kani na pass ang wala na define 
         (err, results) =>{
         if(err){
             console.log("ERROR: " + err);
