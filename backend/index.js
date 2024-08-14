@@ -40,6 +40,6 @@ app.get('/api/check-user', (req, res) => {
 // app.listen(5000, ()=> {
 //     console.log("Server running successful!");
 // })
-server.listen(port, hostname(), ()=> { 
+server.listen(port, hostname, ()=> { 
     console.log(`Started on port ${port}`);
 });
