@@ -3,7 +3,12 @@ import cors from "cors";
 import Router from "./routes/routes.js";
 import { checkUser } from "./models/userModel.js";
 
-const app = express (); 
+const http = require('http');
+const app = express (); //old
+const { hostname } = require('os'); 
+
+const port = process.env.PORT || 5000; 
+const server = http.createServer(app);
 //const app2 = http.create
 
 app.use(express.json());
@@ -26,6 +31,9 @@ app.get('/api/check-user', (req, res) => {
 });
 
 
-app.listen(5000, ()=> {
-    console.log("Server running successful!");
-})
+// app.listen(5000, ()=> {
+//     console.log("Server running successful!");
+// })
+server.listen(port, hostname(), ()=> { 
+    console.log(`Started on port ${port}`);
+});
